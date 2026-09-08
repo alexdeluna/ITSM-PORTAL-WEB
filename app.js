@@ -105,6 +105,7 @@ onAuthStateChanged(auth, (user) => {
         appScreen.classList.remove("hidden");
 
         userEmail.textContent = user.email;
+        carregarCatalogo();
 
     } else {
 
