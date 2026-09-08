@@ -1,10 +1,10 @@
+import { listarServicos } from "./catalog.js";
+
 import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
     signOut,
     onAuthStateChanged
-
-import { listarServicos } from "./catalog.js";
     
 } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-auth.js";
 
