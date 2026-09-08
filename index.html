@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal ITSM</title>
+    <link rel="stylesheet" href="visual.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <section id="loginScreen" class="card">
+
+            <h1>Portal ITSM</h1>
+            <p>Entre para acessar o sistema.</p>
+
+            <input
+                type="email"
+                id="loginEmail"
+                placeholder="E-mail"
+            >
+
+            <input
+                type="password"
+                id="loginPassword"
+                placeholder="Senha"
+            >
+
+            <button id="btnLogin">Entrar</button>
+
+            <button id="btnMostrarCadastro" class="secondary">
+                Criar conta
+            </button>
+
+            <p id="loginMessage"></p>
+
+        </section>
+
+
+        <section id="registerScreen" class="card hidden">
+
+            <h1>Criar conta</h1>
+
+            <input
+                type="email"
+                id="registerEmail"
+                placeholder="E-mail"
+            >
+
+            <input
+                type="password"
+                id="registerPassword"
+                placeholder="Senha"
+            >
+
+            <button id="btnCadastro">Cadastrar</button>
+
+            <button id="btnVoltarLogin" class="secondary">
+                Voltar para login
+            </button>
+
+            <p id="registerMessage"></p>
+
+        </section>
+
+
+        <section id="appScreen" class="card hidden">
+
+            <h1>Portal ITSM</h1>
+
+            <p>Usuário:</p>
+            <strong id="userEmail"></strong>
+
+            <button id="btnLogout">Sair</button>
+
+        </section>
+
+    </main>
+
+    <script type="module" src="app.js"></script>
+
+</body>
+</html>
