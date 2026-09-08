@@ -117,4 +117,45 @@ onAuthStateChanged(auth, (user) => {
 
     }
 
+    async function carregarCatalogo() {
+
+    const container = document.getElementById("catalogoServicos");
+
+    container.innerHTML = "Carregando serviços...";
+
+    try {
+
+        const servicos = await listarServicos();
+
+        if (servicos.length === 0) {
+            container.innerHTML = "Nenhum serviço cadastrado.";
+            return;
+        }
+
+        container.innerHTML = "";
+
+        servicos.forEach(servico => {
+
+            const item = document.createElement("div");
+
+            item.className = "servico";
+
+            item.innerHTML = `
+                <strong>${servico.nome}</strong>
+                <p>${servico.descricao || ""}</p>
+            `;
+
+            container.appendChild(item);
+
+        });
+
+    } catch (error) {
+
+        console.error(error);
+
+        container.innerHTML = "Erro ao carregar catálogo.";
+
+    }
+}
+
 });
