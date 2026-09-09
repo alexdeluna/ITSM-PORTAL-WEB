@@ -9,10 +9,12 @@ import { app } from "./config.js";
 const db = getFirestore(app);
 
 export async function listarServicos() {
+
     const snapshot = await getDocs(collection(db, "servicos"));
 
     return snapshot.docs.map(doc => ({
         id: doc.id,
         ...doc.data()
     }));
+
 }
