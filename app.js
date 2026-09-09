@@ -105,9 +105,11 @@ onAuthStateChanged(auth, (user) => {
         appScreen.classList.remove("hidden");
 
         userEmail.textContent = user.email;
-        const catalogoScreen = document.getElementById("catalogoScreen");
+     const catalogoScreen = document.getElementById("catalogoScreen");
+const btnCatalogo = document.getElementById("btnCatalogo");
+const btnVoltarMenu = document.getElementById("btnVoltarMenu");
 
-document.getElementById("btnCatalogo").addEventListener("click", () => {
+btnCatalogo.addEventListener("click", () => {
 
     appScreen.classList.add("hidden");
     catalogoScreen.classList.remove("hidden");
@@ -116,8 +118,7 @@ document.getElementById("btnCatalogo").addEventListener("click", () => {
 
 });
 
-
-document.getElementById("btnVoltarMenu").addEventListener("click", () => {
+btnVoltarMenu.addEventListener("click", () => {
 
     catalogoScreen.classList.add("hidden");
     appScreen.classList.remove("hidden");
