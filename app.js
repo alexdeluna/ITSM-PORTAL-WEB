@@ -108,6 +108,12 @@ onAuthStateChanged(auth, (user) => {
      const catalogoScreen = document.getElementById("catalogoScreen");
 const btnCatalogo = document.getElementById("btnCatalogo");
 const btnVoltarMenu = document.getElementById("btnVoltarMenu");
+        const chamadoScreen = document.getElementById("chamadoScreen");
+const servicoSelecionado = document.getElementById("servicoSelecionado");
+const descricaoChamado = document.getElementById("descricaoChamado");
+const chamadoMessage = document.getElementById("chamadoMessage");
+
+let servicoAtual = null;
 
 btnCatalogo.addEventListener("click", () => {
 
@@ -158,12 +164,27 @@ btnVoltarMenu.addEventListener("click", () => {
 
             item.className = "servico";
 
-            item.innerHTML = `
-                <strong>${servico.nome}</strong>
-                <p>${servico.descricao || ""}</p>
-            `;
+item.innerHTML = `
+    <strong>${servico.nome}</strong>
+    <p>${servico.descricao || ""}</p>
+    <button type="button">Abrir chamado</button>
+`;
 
             container.appendChild(item);
+
+            item.querySelector("button").addEventListener("click", () => {
+
+    servicoAtual = servico;
+
+    servicoSelecionado.textContent = servico.nome;
+
+    descricaoChamado.value = "";
+    chamadoMessage.textContent = "";
+
+    catalogoScreen.classList.add("hidden");
+    chamadoScreen.classList.remove("hidden");
+
+});
 
         });
 
@@ -175,5 +196,33 @@ btnVoltarMenu.addEventListener("click", () => {
 
     }
 }
+
+});
+
+document.getElementById("btnCancelarChamado").addEventListener("click", () => {
+
+    chamadoScreen.classList.add("hidden");
+    catalogoScreen.classList.remove("hidden");
+
+});
+
+
+document.getElementById("btnAbrirChamado").addEventListener("click", () => {
+
+    const descricao = descricaoChamado.value.trim();
+
+    if (!descricao) {
+
+        chamadoMessage.textContent = "Informe a descrição da solicitação.";
+        return;
+
+    }
+
+    console.log("Chamado:", {
+        servico: servicoAtual,
+        descricao: descricao
+    });
+
+    chamadoMessage.textContent = "Chamado preparado para abertura.";
 
 });
