@@ -66,22 +66,36 @@
         </section>
 
 
-        <section id="appScreen" class="card hidden">
+<section id="appScreen" class="card">
 
-            <h1>Portal ITSM</h1>
+    <h1>Portal ITSM</h1>
 
-            <p>Usuário:</p>
-            <strong id="userEmail"></strong>
+    <p>Usuário:</p>
+    <strong id="userEmail"></strong>
 
-            <button id="btnLogout">Sair</button>
+    <hr>
 
-            <hr>
+    <h2>Menu Principal</h2>
 
-<h2>Catálogo de Serviços</h2>
+    <button id="btnCatalogo">Catálogo de Serviços</button>
+    <button id="btnChamados">Meus Chamados</button>
 
-<div id="catalogoServicos"></div>
+    <button id="btnLogout" class="secondary">Sair</button>
 
-        </section>
+</section>
+
+
+<section id="catalogoScreen" class="card hidden">
+
+    <h1>Catálogo de Serviços</h1>
+
+    <div id="catalogoServicos"></div>
+
+    <button id="btnVoltarMenu" class="secondary">
+        Voltar ao Menu
+    </button>
+
+</section>
 
     </main>
 
