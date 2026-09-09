@@ -105,7 +105,24 @@ onAuthStateChanged(auth, (user) => {
         appScreen.classList.remove("hidden");
 
         userEmail.textContent = user.email;
-        carregarCatalogo();
+        const catalogoScreen = document.getElementById("catalogoScreen");
+
+document.getElementById("btnCatalogo").addEventListener("click", () => {
+
+    appScreen.classList.add("hidden");
+    catalogoScreen.classList.remove("hidden");
+
+    carregarCatalogo();
+
+});
+
+
+document.getElementById("btnVoltarMenu").addEventListener("click", () => {
+
+    catalogoScreen.classList.add("hidden");
+    appScreen.classList.remove("hidden");
+
+});
 
     } else {
 
