@@ -89,11 +89,38 @@
 
     <h1>Catálogo de Serviços</h1>
 
-    <div id="catalogoServicos"></div>
+<div id="catalogoServicos"></div>
 
-    <button id="btnVoltarMenu" class="secondary">
-        Voltar ao Menu
+<button id="btnVoltarMenu" class="secondary">
+    Voltar ao Menu
+</button>
+
+</section>
+
+        <section id="chamadoScreen" class="card hidden">
+
+    <h1>Abertura de Chamado</h1>
+
+    <p>Serviço:</p>
+    <strong id="servicoSelecionado"></strong>
+
+    <label for="descricaoChamado">Descreva sua solicitação:</label>
+
+    <textarea
+        id="descricaoChamado"
+        rows="6"
+        placeholder="Informe o que você precisa."
+    ></textarea>
+
+    <button id="btnAbrirChamado">
+        Abrir Chamado
     </button>
+
+    <button id="btnCancelarChamado" class="secondary">
+        Cancelar
+    </button>
+
+    <p id="chamadoMessage"></p>
 
 </section>
 
